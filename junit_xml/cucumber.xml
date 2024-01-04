@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="0.319" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="Account Page Feature" name="" time="0.042">
+<system-out><![CDATA[
+Given user has already logged in to the application.........................passed
+]]></system-out>
+</testcase>
+</testsuite>
