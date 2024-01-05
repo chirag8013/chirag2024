@@ -12,6 +12,7 @@ import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.restassured.RestAssured;
 
 
 public class TaggedHooksStepDefinition {
@@ -39,6 +40,10 @@ public class TaggedHooksStepDefinition {
 	 
 	  for(int i=0; i< mp.size(); i++) {
 	  System.out.println(mp.get(i).get("username")+ " "+ mp.get(i).get("password")); }
+	  
+	  RestAssured rest = null;
+	  List response= rest.given().when().get("https://reqres.in/api/users?page=2").getBody().jsonPath().get("data.email");
+	  response.stream().map(i-> i+" BHAAD ME JA").filter(i-> i.toString().contains("byron")).forEach(System.out::println);
 	  
 	}
 
